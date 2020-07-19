@@ -1,0 +1,11 @@
+{
+  "name": "PotatoShop-API",
+  "version": "1.0.0",
+  "main": "App.js",
+  "repository": "https://github.com/EmanAALK/PotatoShop-API.git",
+  "author": "EmanAALK <emanalkandarii@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon app.js"
+  }
+}
