@@ -25,13 +25,6 @@ app.post("/plants", (req, res) => {
   res.status(201).json(newPlant);
 });
 
-app.post("/cookies", (req, res) => {
-  const id = cookies[cookies.length - 1].id + 1;
-  const newCookie = { id, ...req.body }; //id is equivalent to id: id
-  cookies.push(newCookie);
-  res.json(newCookie);
-});
-
 //Delete Plant
 app.delete("/plants/:plantId", (req, res) => {
   const { plantId } = req.params;
