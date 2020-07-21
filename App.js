@@ -37,4 +37,16 @@ app.delete("/plants/:plantId", (req, res) => {
   }
 });
 
+//Update plant
+app.put("/plants/:plantId", (req, res) => {
+  const { plantId } = req.params;
+  const foundPlant = plants.find((plant) => plant.id === +plantId);
+  if (foundPlant) {
+    for (const key in req.body) foundPlant[key] = req.body[key];
+    res.status(204).end();
+  } else {
+    res.status(404).json({ message: "Plant not found" });
+  }
+});
+
 app.listen(8000);
