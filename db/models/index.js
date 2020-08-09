@@ -1,5 +1,6 @@
 const Plant = require("./Plant");
 const Vendor = require("./Vendor");
+const User = require("./User");
 
 Vendor.hasMany(Plant, {
   as: "plants",
@@ -8,4 +9,4 @@ Vendor.hasMany(Plant, {
 });
 Plant.belongsTo(Vendor, { as: "vendor" });
 
-module.exports = { Plant, Vendor };
+module.exports = { Plant, Vendor, User };
