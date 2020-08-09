@@ -9,18 +9,19 @@ const db = require("./db");
 //Routes
 const plantRoutes = require("./routes/plants");
 const vendorRoutes = require("./routes/vendors");
+const userRoutes = require("./routes/users");
 
 //Create Express App Instance
 const app = express();
+
+app.use(bodyParser.json());
+app.use(cors());
 
 //Routers
 app.use("/plants", plantRoutes);
 app.use("/vendors", vendorRoutes);
 app.use("/media", express.static(path.join(__dirname, "media")));
 app.use(userRoutes);
-
-app.use(bodyParser.json());
-app.use(cors());
 
 //Not Found Paths
 app.use((req, res, next) => {
