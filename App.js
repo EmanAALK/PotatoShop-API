@@ -17,6 +17,7 @@ const app = express();
 app.use("/plants", plantRoutes);
 app.use("/vendors", vendorRoutes);
 app.use("/media", express.static(path.join(__dirname, "media")));
+app.use(userRoutes);
 
 app.use(bodyParser.json());
 app.use(cors());
