@@ -1,5 +1,7 @@
 const express = require("express");
 
+const passport = require("passport");
+
 //Controllers
 const {
   vendorCreate,
