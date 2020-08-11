@@ -3,6 +3,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
 const passport = require("passport");
+
+//Strategies
 const { localStrategy } = require("./middleware/passport");
 
 //DB
