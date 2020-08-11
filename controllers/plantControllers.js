@@ -2,7 +2,6 @@ const slugify = require("slugify");
 const { Vendor } = require("../db/models");
 
 //Data
-let plants = require("../data");
 const Plant = require("../db/models/Plant");
 
 //Media Route
