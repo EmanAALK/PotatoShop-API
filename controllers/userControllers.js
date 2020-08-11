@@ -27,6 +27,7 @@ exports.signin = (req, res, next) => {
     email: user.email,
     firstName: user.firstName,
     lastName: user.lastName,
+    role: user.role,
     expires: Date.now() + JWT_EXPIRATION_MS,
   };
   const token = jwt.sign(JSON.stringify(payload), JWT_SECERET);
