@@ -5,7 +5,7 @@ const path = require("path");
 const passport = require("passport");
 
 //Strategies
-const { localStrategy } = require("./middleware/passport");
+const { localStrategy, jwtStrategy } = require("./middleware/passport");
 
 //DB
 const db = require("./db");
@@ -20,8 +20,11 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+
+//Passport
 app.use(passport.initialize());
 passport.use(localStrategy);
+passport.use(jwtStrategy);
 
 //Routers
 app.use("/plants", plantRoutes);
