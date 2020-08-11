@@ -29,6 +29,10 @@ User.init(
       allowNull: false,
       unique: true,
     },
+    role: {
+      type: DataTypes.STRING,
+      defaultValue: "customer",
+    },
   },
   {
     sequelize: db,
