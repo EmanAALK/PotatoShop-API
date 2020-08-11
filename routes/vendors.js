@@ -31,7 +31,12 @@ router.param("vendorId", async (req, res, next, vendorId) => {
 router.get("/", vendorList);
 
 //Vendor Create
-router.post("/", upload.single("image"), vendorCreate);
+router.post(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  upload.single("image"),
+  vendorCreate
+);
 
 //Vendor Delete
 router.delete("/:vendorId", vendorDelete);
